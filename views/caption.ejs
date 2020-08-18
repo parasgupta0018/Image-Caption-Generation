@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <base href="/">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@500&display=swap" rel="stylesheet">
+    <link rel="icon" href="../images/plogod614-41c9-a8ed-99372c8c45fa.ico" style="background-color: transparent">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+     
+    <link type="text/css" rel="stylesheet" href="../css/captions.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script async src="https://docs.opencv.org/3.4/opencv.js" onload="onOpenCvReady();" type="text/javascript">
+    </script>
+
+    <title>Image Caption Generator</title> 
+</head>
+
+<body>
+  <div class="navbar-fixed white" style="box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.151);">
+    <nav>
+      <div class="nav-wrapper grey lighten-2">
+        <a href="#!" id="navtext" class="brand-logo center" style="width:100%;color: red;font-family: 'Lemonada', cursive;">IMAGE CAPTION GENERATOR</a>
+      </div>
+    </nav>
+  </div>
+
+    <div class="row" style="max-width: 600px;margin-top: 15px;">
+        <div class="col s12">
+          <div class="card white darken-1">
+            <div class="card-content grey-text" id="dropzone">
+                <div class="main-form">
+                  <div class="upload">
+                      <span class="card-title">Upload your image</span>
+                      <i class="material-icons large grey-text">image</i>
+                      <p>Drag or Drop image</p><br>
+                      <form action="/uploadpic" enctype="multipart/form-data" id="imgfileform" method="POST">
+                          <input type="file" name="image" class="imgupload" id="img-upload" style="display:none" />
+                          <label for="img-upload" class="custom-file-upload" style="width: 100%;">
+                              <a class="btn red">SELECT FILE</a>
+                          </label>
+                      </form>
+                      <p>---------------or----------------</p>
+                      <form class="urlform" id="urlform">
+                          <div class="row url red white-text">
+                              <div class="input-field col s12" style="padding: 10px !important;">
+                                  <i class="material-icons prefix">insert_link</i>
+                                  <input id="url" type="text" class="validate white-text input_url">
+                                  <label for="url" class="white-text">Enter URL</label>
+                              </div>
+                          </div>
+                      </form>
+                    </div>
+                </div>
+                <div class="res col s12"  style="display: none;">
+                    <div class="upload">
+                      <div class="box_uploading" data-label="Not an image">
+                      </div>
+                      <img id="hidden-image" style="display: none;"/>
+                      <div class="row buttons" id="buttons">
+                        <div class="col s12 m8 flex-item" style="margin-bottom: 5px;">
+                          <a class="waves-effect waves-light btn-small blue white-text " id="captionbtn">Generate Caption</a>
+                        </div>
+                        <div class="col s12 m4 flex-item">
+                          <a class="waves-effect waves-light btn-small red white-text" id="cancelbtn">Cancel</a>
+                        </div>
+                      </div>
+                      <div class="captions" id="disp-captions"  style="display: none;padding: 7px;">
+                        <p><b>GENERATED CAPTION: <i class="material-icons copy grey-text" onclick="CopyToClipboard('capt')">content_copy</i></b></p>
+                      </div>
+                    </div>
+                </div>
+        
+            </div>
+          </div>
+        </div>
+      </div>
+
+</body>
+<script type="text/javascript">
+ 
+  function onOpenCvReady() {
+    console.log('OpenCV.js is ready.');
+  }
+  </script>
+  <script src="..//js/jquery.js"></script>
+  <script src="http://malsup.github.com/jquery.form.js"></script> 
+  <script src="..//js/captionscrpt.js"></script>
+  <script src="..//js/materialize.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('.collapsible').collapsible();
+   });  
+  </script>
+
+
+</html>

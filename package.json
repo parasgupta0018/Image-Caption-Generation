@@ -1,0 +1,30 @@
+{
+    "name": "captio",
+    "version": "1.0.0",
+    "description": "Video ",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js",
+        "dev": "nodemon app.js"
+    },
+    "author": "paras",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "child_process": "^1.0.2",
+        "connect-flash": "^0.1.1",
+        "crypto": "^1.0.1",
+        "ejs": "^3.0.1",
+        "express": "^4.17.1",
+        "express-session": "^1.17.0",
+        "https": "^1.0.0",
+        "multer": "^1.4.2",
+        "opencv4nodejs": "^5.6.0",
+        "opn": "^6.0.0",
+        "path": "^0.12.7",
+        "sweetalert2": "^9.10.6"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.2"
+    }
+}
