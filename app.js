@@ -90,6 +90,6 @@ app.post('/captions',(req,res)=>{
         // });
 });
 
-server.listen(3000, () => {
-    console.log(`server started at port 3000`);
+server.listen(process.env.PORT || 5000, () => {
+    console.log(`server started at port 5000`);
 })
