@@ -56,7 +56,7 @@ app.post('/uploadpic', upload.single('image'), (req, res, next) => {
 
     python.stdout.on('data',(data)=>{
         let imgData = data.toString();
-        //console.log('Received: ',imgData)
+        console.log('Received:');
         fs.unlinkSync(req.file.path)
         res.send(imgData)
     })
