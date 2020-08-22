@@ -48,6 +48,7 @@ app.post('/uploadpic', upload.single('image'), (req, res, next) => {
     if (!file) {
         console.log('img_err', 'images with ext jpeg,jpg,png,gif only!!');
     }
+    //console.log('ayaaa');
     //let url = file.path.replace('public', '');
     //console.log(req.file);
     //res.send(req.file.filename)
