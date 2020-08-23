@@ -5,7 +5,7 @@ import cv2
 import time
 #import urllib3 as urllib
 from PIL import Image as Img
-from skimage import io
+#from skimage import io
 from io import BytesIO
 import numpy as np
 import base64
