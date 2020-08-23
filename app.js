@@ -15,7 +15,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set("view engine", "ejs");
 
 let storage = multer.diskStorage({
-    destination: './public/uploads/',
+    destination: './public/images/',
     filename: (req, file, cb) => {
         crypto.randomBytes(20, (err, buf) => {
             const rand = buf.toString('hex');
@@ -52,7 +52,7 @@ app.post('/uploadpic', upload.single('image'), (req, res, next) => {
     //let url = file.path.replace('public', '');
     //console.log(req.file);
     //res.send(req.file.filename)
-    let path = './public/uploads/'+req.file.filename;
+    let path = './public/images/'+req.file.filename;
     const python = spawn('python3',['./public/test.py',path]);
 
     python.stdout.on('data',(data)=>{
