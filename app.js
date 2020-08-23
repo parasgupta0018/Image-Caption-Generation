@@ -48,7 +48,7 @@ app.post('/uploadpic', upload.single('image'), (req, res, next) => {
     if (!file) {
         console.log('img_err', 'images with ext jpeg,jpg,png,gif only!!');
     }
-    //console.log('ayaaa');
+    console.log('ayaaa');
     //let url = file.path.replace('public', '');
     //console.log(req.file);
     //res.send(req.file.filename)
@@ -57,7 +57,7 @@ app.post('/uploadpic', upload.single('image'), (req, res, next) => {
 
     python.stdout.on('data',(data)=>{
         let imgData = data.toString();
-        console.log('Received:');
+        console.log('Received: ',imgData);
         fs.unlinkSync(req.file.path)
         res.send(imgData)
     })
