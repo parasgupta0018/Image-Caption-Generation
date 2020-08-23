@@ -54,7 +54,11 @@ app.post('/uploadpic', upload.single('image'), (req, res, next) => {
     //res.send(req.file.filename)
     let path = './public/images/'+req.file.filename;
     const python = spawn('python3',['./public/test.py',path]);
-
+    
+    python.stderr.on('data', function (buf) {
+        console.log('stderr message: ' + buf);
+    });
+    
     python.stdout.on('data',(data)=>{
         let imgData = data.toString();
         console.log('Received: ',imgData);
