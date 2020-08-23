@@ -4,4 +4,4 @@ libxrender-dev
 libfontconfig1
 libxrender1
 libice6
-libgl
+libgl1
